@@ -204,13 +204,13 @@ internal class ShowMainMenu
                 Console.Write("Enter new last name: ");
                 existingPlayer.LastName = Console.ReadLine()!;
 
-                Console.Write("Enter new birth year: ");
+                Console.Write("Enter your new birthyear like this Ex: 2024: ");
                 existingPlayer.BirthDate.BirthYear = Console.ReadLine()!;
 
-                Console.Write("Enter new birth month: ");
+                Console.Write("Enter your new birth month like this Ex: 05: ");
                 existingPlayer.BirthDate.BirthMonth = Console.ReadLine()!;
 
-                Console.Write("Enter new birth day: ");
+                Console.Write("Enter your new birth day like this Ex: 23: ");
                 existingPlayer.BirthDate.BirthDay = Console.ReadLine()!;
 
                 Console.Write("Enter new current club: ");

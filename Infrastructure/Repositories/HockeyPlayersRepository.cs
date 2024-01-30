@@ -27,13 +27,14 @@ namespace Infrastructure.Repositories
                 .Include(x => x.BirthDate)
                 .Include(x => x.Club)
                 .Include(x => x.Nationality)
-                .Include(x => x.Position)                               
+                .Include(x => x.Position)
                 .FirstOrDefault(predicate);
             return entity!;
         }
+
+
+
     }
-
-
 
 
 

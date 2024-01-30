@@ -67,7 +67,8 @@ public class HockeyPlayersService(HockeyPlayersRepository hockeyPlayersRepositor
 
     public HockeyPlayersEntity UpdateHockeyPlayer(HockeyPlayersEntity player)
     {
-      var updatedPlayer = _hockeyPlayersRepository.Update(x => x.Id == player.Id, player);
+        
+        var updatedPlayer = _hockeyPlayersRepository.Update(x => x.Id == player.Id, player);
         return updatedPlayer;
     }
 

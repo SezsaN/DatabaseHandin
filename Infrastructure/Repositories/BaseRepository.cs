@@ -53,10 +53,10 @@ public abstract class BaseRepository<TEntity> where TEntity : class
     {
         try
         {
-            var entityToUpdate = _context.Set<TEntity>().FirstOrDefault(entity);
+            var entityToUpdate = _context.Set<TEntity>().FirstOrDefault(expression);
             if (entityToUpdate != null)
             {
-                entityToUpdate = entity;
+                
                 _context.Entry(entityToUpdate!).CurrentValues.SetValues(entity);
                 _context.SaveChanges();
                 return entityToUpdate;

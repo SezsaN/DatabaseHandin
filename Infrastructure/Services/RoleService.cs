@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    internal class RoleService
+    public class RoleService
     {
         private readonly RoleRepository _roleRepository;
 
@@ -20,7 +20,7 @@ namespace Infrastructure.Services
         public Role CreateRole(string roleName)
         {
             var role = _roleRepository.GetOne(x => x.RoleName == roleName);
-            if (role != null)
+            if (role == null)
             {
                 role = _roleRepository.Create(new Role { RoleName = roleName });
             }

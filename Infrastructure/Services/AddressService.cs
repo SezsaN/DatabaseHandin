@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    internal class AddressService
+    public class AddressService
     {
         private readonly AddressRepository _addressRepository;
 
@@ -21,7 +21,7 @@ namespace Infrastructure.Services
         public Address CreateAddress(string streetName, string postalCode, string city)
         {
             var address = _addressRepository.GetOne(x => x.StreetName == streetName && x.PostalCode == postalCode && x.City == city);
-            if (address != null)
+            if (address == null)
             {
                 address = _addressRepository.Create(new Address { StreetName = streetName, PostalCode = postalCode, City = city });
             }

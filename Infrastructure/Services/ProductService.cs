@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    internal class ProductService
+    public class ProductService
     {
         private readonly ProductRepository _productRepository;
 
@@ -20,7 +20,7 @@ namespace Infrastructure.Services
         public Product CreateProduct(string title, decimal price)
         {
             var product = _productRepository.GetOne(x => x.Title == title && x.Price == price);
-            if (product != null)
+            if (product == null)
             {
                 product = _productRepository.Create(new Product { Title = title, Price = price });
             }

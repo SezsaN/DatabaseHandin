@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories;
 
-internal class CustomerRepository(DataContextDbFirst context) : BaseProductRepository<Customer>(context)
+public class CustomerRepository(DataContextDbFirst context) : BaseProductRepository<Customer>(context)
 {
     private readonly DataContextDbFirst _context = context;
 

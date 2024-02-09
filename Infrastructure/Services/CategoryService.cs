@@ -3,7 +3,7 @@ using Infrastructure.Repositories;
 
 namespace Infrastructure.Services;
 
-internal class CategoryService
+public class CategoryService
 {
    private readonly CategoryRepository _categoryRepository;
 
@@ -15,7 +15,7 @@ internal class CategoryService
     public Category CreateCategory(string categoryName)
     {
         var category= _categoryRepository.GetOne(x => x.CategoryName == categoryName);
-        if (category != null)
+        if (category == null)
         {
             category = _categoryRepository.Create(new Category { CategoryName = categoryName});
         }

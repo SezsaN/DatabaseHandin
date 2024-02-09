@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    internal class CustomerService
+    public class CustomerService
     {
         private readonly CustomerRepository _customerRepository;
 
@@ -20,7 +20,7 @@ namespace Infrastructure.Services
         public Customer CreateCustomer(string firstName, string lastName, string email, int addressId, int roleId)
         {
             var customer = _customerRepository.GetOne(x => x.FirstName == firstName && x.LastName == lastName && x.Email == email &&  x.AddressId == addressId && x.RoleId == roleId);
-            if (customer != null)
+            if (customer == null)
             {
                 customer = _customerRepository.Create(new Customer { FirstName = firstName, LastName = lastName, Email = email, AddressId = addressId, RoleId = roleId});
             }
